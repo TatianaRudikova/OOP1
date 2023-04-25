@@ -1,13 +1,50 @@
 package ru.netology;
 
 public class Radio {
-    private int currentRadioStationNumber;
-    private int currentSoundVolume;
-    int minNumber = 0;
-    int maxNumber = 9;
-    int minVolume = 0;
-    int maxVolume = 10;
+    private int currentRadioStationNumber; //текущая радиостанция
+    private int currentSoundVolume; //текущий звук
+    private int numberRadioStations = 10; //кол-во радиостанций
+    private int minNumber = 0;
+    private int maxNumber = numberRadioStations - 1;
+    private int minVolume = 0;
+    private int maxVolume = 10;
 
+
+    public Radio() {
+    }
+
+    public Radio(int currentRadioStationNumber, int numberRadioStations) {
+        this.currentRadioStationNumber = currentRadioStationNumber;
+        if (numberRadioStations > 0) {
+            this.numberRadioStations = numberRadioStations;
+            this.maxNumber = numberRadioStations - 1;
+        }
+    }
+
+    public Radio(int numberRadioStations) {
+        if (numberRadioStations > 0) {
+            this.numberRadioStations = numberRadioStations;
+            this.maxNumber = numberRadioStations - 1;
+        }
+        return;
+    }
+
+
+    public int getNumberRadioStations() {
+        return numberRadioStations;
+    }
+
+    public int getMaxNumber() {
+        return maxNumber;
+    }
+
+    public int getCurrentRadioStationNumber() {
+        return currentRadioStationNumber;
+    }
+
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
 
     //Выставляем номер радиостанции
     public void setCurrentRadioStationNumber(int newRadioStationNumber) {
@@ -42,10 +79,6 @@ public class Radio {
         }
     }
 
-    public int getCurrentRadioStationNumber() {
-        return currentRadioStationNumber;
-    }
-
     //Выставляем уровень громкости
     public void setCurrentSoundVolume(int newVolume) {
         if (newVolume < minVolume) {
@@ -77,10 +110,6 @@ public class Radio {
         if (currentSoundVolume == minVolume) {
             return;
         }
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
     }
 
 }
