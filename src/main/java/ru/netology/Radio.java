@@ -4,16 +4,16 @@ public class Radio {
     private int currentRadioStationNumber; //текущая радиостанция
     private int currentSoundVolume; //текущий звук
     private int numberRadioStations = 10; //кол-во радиостанций
-    int minNumber = 0;
-    int maxNumber = numberRadioStations - 1;
-    int minVolume = 0;
-    int maxVolume = 10;
+    private int minNumber = 0;
+    private int maxNumber = numberRadioStations - 1;
+    private int minVolume = 0;
+    private int maxVolume = 10;
 
 
-    public Radio () {
+    public Radio() {
     }
 
-    public Radio(int currentRadioStationNumber, int numberRadioStations){
+    public Radio(int currentRadioStationNumber, int numberRadioStations) {
         this.currentRadioStationNumber = currentRadioStationNumber;
         if (numberRadioStations > 0) {
             this.numberRadioStations = numberRadioStations;
@@ -21,11 +21,12 @@ public class Radio {
         }
     }
 
-    public Radio (int numberRadioStations){
+    public Radio(int numberRadioStations) {
         if (numberRadioStations > 0) {
-           this.numberRadioStations = numberRadioStations;
+            this.numberRadioStations = numberRadioStations;
             this.maxNumber = numberRadioStations - 1;
-        } return;
+        }
+        return;
     }
 
 

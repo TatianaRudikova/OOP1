@@ -5,18 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    Radio volume = new Radio();
 
     //Устанавливаем кол-во радиостанций
     @Test
-    public void shouldNumberRadioStations(){
+    public void shouldNumberRadioStations() {
         Radio radioStation = new Radio(12);
         assertEquals(12, radioStation.getNumberRadioStations());
     }
 
     //Устанавливаем кол-во радиостанций меньше мин
     @Test
-    public void shouldNumberMinRadioStations(){
+    public void shouldNumberMinRadioStations() {
         Radio radioStation = new Radio(-1);
         assertEquals(10, radioStation.getNumberRadioStations());
     }
@@ -61,7 +60,7 @@ class RadioTest {
     //Устанавливаем кол-во станций меньше мининума для второго конструктора
     @Test
     public void shouldNumberOfRadioStationsMin2() {
-        Radio radioStation = new Radio(5,-1);
+        Radio radioStation = new Radio(5, -1);
         assertEquals(5, radioStation.getCurrentRadioStationNumber());
     }
 
@@ -123,7 +122,7 @@ class RadioTest {
 
     //    Выставляем уровень громкости > max
     @Test
-    public void shouldSetCurrentSoundVolumeMax (){
+    public void shouldSetCurrentSoundVolumeMax() {
         Radio volume = new Radio();
         volume.setCurrentSoundVolume(12);
 
@@ -135,7 +134,7 @@ class RadioTest {
 
     //    Выставляем уровень громкости < min
     @Test
-    public void shouldSetCurrentSoundVolumeMin (){
+    public void shouldSetCurrentSoundVolumeMin() {
         Radio volume = new Radio();
         volume.setCurrentSoundVolume(-5);
 
